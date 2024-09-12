@@ -1,12 +1,17 @@
 import React from "react";
-import "./App.css";
+import { HashRouter, Routes, Route } from "react-router-dom"; // 注意这里的导入
 import BarcodeScanner from "../src/page/BarcodeScanner";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <BarcodeScanner />
-    </div>
+    <HashRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<BarcodeScanner />} />
+        </Routes>
+      </div>
+    </HashRouter>
   );
 }
 
