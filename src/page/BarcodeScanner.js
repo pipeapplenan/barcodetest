@@ -30,16 +30,13 @@ const BarcodeScanner = () => {
   const handleBarcodeInputSubmit = () => {
     if (barcode) {
       // 发送条形码到后端进行验证
-      fetch(
-        "https://016f-2407-7000-90bb-d00-11d0-4f96-678e-e031.ngrok-free.app/api/validate-barcode",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ barcode }),
-        }
-      )
+      fetch("http://47.103.38.50:3001/api/validate-barcode", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ barcode }),
+      })
         .then((response) => response.json())
         .then((data) => {
           alert("验证结果: " + data.message);
@@ -60,16 +57,13 @@ const BarcodeScanner = () => {
         success: (res) => {
           const result = res.resultStr; // 扫描结果
           // 发送到后端进行验证
-          fetch(
-            "https://016f-2407-7000-90bb-d00-11d0-4f96-678e-e031.ngrok-free.app/api/validate-barcode",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ barcode: result }),
-            }
-          )
+          fetch("http://47.103.38.50:3001/api/validate-barcode", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ barcode: result }),
+          })
             .then((response) => response.json())
             .then((data) => {
               alert("验证结果: " + data.message);
@@ -98,8 +92,8 @@ const BarcodeScanner = () => {
       <br />
       <br />
 
-      {/* 微信扫码功能 */}
-      <button onClick={handleScan}>点击扫码识别</button>
+      {/* 微信扫码功能
+      <button onClick={handleScan}>点击扫码识别</button> */}
     </div>
   );
 };
