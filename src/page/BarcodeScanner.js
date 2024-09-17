@@ -30,7 +30,7 @@ const BarcodeScanner = () => {
   const handleBarcodeInputSubmit = () => {
     if (barcode) {
       // 发送条形码到后端进行验证
-      fetch("http://47.103.38.50:3001/api/validate-barcode", {
+      fetch("https://barcodebackend.vercel.app/api/validate-barcode", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const BarcodeScanner = () => {
         success: (res) => {
           const result = res.resultStr; // 扫描结果
           // 发送到后端进行验证
-          fetch("http://47.103.38.50:3001/api/validate-barcode", {
+          fetch("https://barcodebackend.vercel.app/api/validate-barcode", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
