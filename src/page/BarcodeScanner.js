@@ -1,10 +1,11 @@
 /* global wx */
 import React, { useState, useEffect } from "react";
 import "./BarcodeScanner.css";
+import axios from "axios";
 
 const BarcodeScanner = () => {
   const [barcode, setBarcode] = useState("");
-
+  const [file, setFile] = useState(null);
   const handleBarcodeInputChange = (e) => {
     setBarcode(e.target.value);
   };
@@ -24,7 +25,7 @@ const BarcodeScanner = () => {
       console.log("Serial Number:", serialNumber);
 
       // 发送条形码数据到后端进行验证
-      fetch("https://barcodebackend.vercel.app/api/validate-barcode", {
+      fetch("http://localhost:3000/api/validate-barcode", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,6 +49,46 @@ const BarcodeScanner = () => {
     }
   };
 
+  // const handleDatabaseImport = async () => {
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:3000/api/import-barcodes"
+  //     );
+  //     console.log("Database import successful:", response.data);
+  //     alert("Database import successful");
+  //   } catch (error) {
+  //     console.error("Error importing database:", error);
+  //     alert("Error importing database");
+  //   }
+  // };
+
+  // const handleFileChange = (e) => {
+  //   setFile(e.target.files[0]);
+  // };
+
+  // const handleFileUpload = () => {
+  //   if (!file) {
+  //     alert("请选择文件");
+  //     return;
+  //   }
+
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+
+  //   fetch("http://localhost:3000/api/upload", {
+  //     method: "POST",
+  //     body: formData,
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       alert("文件上传成功: " + data.message);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error uploading file:", error);
+  //       alert("文件上传失败");
+  //     });
+  // };
+
   return (
     <div className="container">
       <h1>条形码验证系统</h1>
@@ -57,8 +98,8 @@ const BarcodeScanner = () => {
         type="text"
         value={barcode}
         onChange={handleBarcodeInputChange}
-        placeholder="请输入完整的条形码"
-        style={{ width: "300px" }}
+        placeholder="请输入完整18位的条形码"
+        style={{ width: "300px", height: "50px" }}
         maxLength={18} // 限制为18位
       />
 

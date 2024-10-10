@@ -1,0 +1,77 @@
+/* src/components/Modal.css */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between; /* 使按钮两边对齐 */
+}
+
+#btn,
+#cancel-btn {
+  background-color: #3b7dba;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 48%; /* 让两个按钮占据父容器的宽度 */
+}
+
+#cancel-btn {
+  margin-left: 5px;
+  background-color: #16a02b; /* 取消按钮的颜色为红色 */
+}
+
+#btn:hover {
+  background-color: #336fa4;
+}
+
+#cancel-btn:hover {
+  background-color: #c9302c; /* 鼠标悬停时取消按钮变暗 */
+}

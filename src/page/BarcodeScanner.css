@@ -4,6 +4,7 @@
   align-items: center; /* 使输入框和按钮居中 */
   justify-content: center;
   height: 100vh; /* 使内容垂直居中 */
+  margin-top: -200px;
 }
 
 .inputs {

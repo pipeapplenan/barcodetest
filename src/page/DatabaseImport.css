@@ -1,0 +1,28 @@
+/* src/App.css */
+
+.database-import-container {
+  display: flex;
+  flex-direction: column; /* 纵向排列子元素 */
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  height: 100vh; /* 让容器的高度占满整个视窗 */
+  text-align: center; /* 文本居中 */
+}
+
+.database-import-container button,
+.database-import-container input {
+  margin: 10px 0; /* 给按钮和输入框增加间距 */
+}
+
+.import {
+  padding-top: 50px;
+}
+
+.page-title {
+  position: absolute;
+  top: 260px; /* 调整这个值控制标题与页面顶部的距离 */
+}
+
+input {
+  font-size: 20px;
+}
