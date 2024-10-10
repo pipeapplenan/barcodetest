@@ -25,7 +25,7 @@ const BarcodeScanner = () => {
       console.log("Serial Number:", serialNumber);
 
       // 发送条形码数据到后端进行验证
-      fetch("http://localhost:3000/api/validate-barcode", {
+      fetch("https://barcodebackend.vercel.app/api/validate-barcode", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -9,7 +9,7 @@ const DatabaseImport = () => {
   const handleDatabaseImport = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/import-barcodes"
+        "https://barcodebackend.vercel.app/api/import-barcodes"
       );
       console.log("Database import successful:", response.data);
       alert("Database import successful");
@@ -32,7 +32,7 @@ const DatabaseImport = () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("http://localhost:3000/api/upload", {
+    fetch("https://barcodebackend.vercel.app/api/upload", {
       method: "POST",
       body: formData,
     })
