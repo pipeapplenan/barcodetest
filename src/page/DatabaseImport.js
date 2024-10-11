@@ -5,11 +5,17 @@ import "./DatabaseImport.css";
 
 const DatabaseImport = () => {
   const [file, setFile] = useState(null);
+  const [filePath, setFilePath] = useState(""); // 新增状态用于保存文件路径
 
   const handleDatabaseImport = async () => {
+    if (!filePath) {
+      alert("请先上传文件");
+      return;
+    }
     try {
       const response = await axios.post(
-        "https://barcodebackend.vercel.app/api/import-barcodes"
+        "https://barcodebackend.vercel.app/api/import-barcodes",
+        { filePath } // 将文件路径作为请求体传递
       );
       console.log("Database import successful:", response.data);
       alert("Database import successful");
@@ -39,6 +45,7 @@ const DatabaseImport = () => {
       .then((response) => response.json())
       .then((data) => {
         alert("文件上传成功: " + data.message);
+        setFilePath(data.filePath); // 将文件路径保存到状态中
       })
       .catch((error) => {
         console.error("Error uploading file:", error);
