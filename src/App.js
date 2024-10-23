@@ -31,7 +31,7 @@ const App = () => {
         </div>
         <div className="nav">
           <div className="barcode">
-            <Link to="/barcodetest">条形码验证</Link>
+            <Link to="/">条形码验证</Link>
           </div>
           <div className="filedatabase">
             <Link to="#" onClick={handleFileDatabaseClick}>
@@ -51,13 +51,11 @@ const App = () => {
       {/* 内容区域 */}
       <div className="content">
         <Routes>
-          <Route path="/barcodetest" element={<BarcodeScanner />} />
+          <Route path="/" element={<BarcodeScanner />} />
           {/* 只有登录成功后才能访问 DatabaseImport 页面 */}
           {isAuthenticated && (
             <Route path="/databasefile" element={<DatabaseImport />} />
           )}
-          {/* 默认重定向到 /barcodetest */}
-          <Route path="*" element={<Link to="/barcodetest" />} />
         </Routes>
       </div>
     </Router>
