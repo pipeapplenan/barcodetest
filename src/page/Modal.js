@@ -11,7 +11,7 @@ const Modal = ({ isOpen, onClose, onLogin }) => {
   const handleLogin = () => {
     if (username === "admin" && password === "password") {
       onLogin(); // 登录成功
-      onClose(); // 关闭模态框
+      onClose(); //
       navigate("/databasefile"); // 登录成功后跳转到 /databasefile 页面
     } else {
       alert("用户名或密码错误！");
