@@ -5,7 +5,7 @@
   flex-direction: column; /* 纵向排列子元素 */
   justify-content: center; /* 垂直居中 */
   align-items: center; /* 水平居中 */
-  height: 100vh; /* 让容器的高度占满整个视窗 */
+  height: 70vh; /* 让容器的高度占满整个视窗 */
   text-align: center; /* 文本居中 */
 }
 

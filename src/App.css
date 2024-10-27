@@ -11,6 +11,7 @@
   flex: 1;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
+  font-size: 30px;
 }
 .title {
   flex: 1;

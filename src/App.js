@@ -24,7 +24,7 @@ const App = () => {
       {/* Banner 组件 */}
       <div className="banner">
         <div className="logo">
-          <p>赛特斯公司</p>
+          <p>赛特斯</p>
         </div>
         <div className="title">
           <h1>条形码查询系统工具</h1>
@@ -45,11 +45,22 @@ const App = () => {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)} // 关闭模态框
-        onLogin={handleLoginSuccess} // 登录成功后的回调
+        onLogin={handleLoginSuccess} // 登录成功后
       />
 
       {/* 内容区域 */}
-      <div className="content">
+      <div
+        className="content"
+        style={{
+          backgroundImage: `url("/OIP.jpg")`, // 从 public 文件夹引用图片
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          paddingTop: "80px" /* 调整此值，使 banner 位置明显 */,
+          height: "72vh",
+          width: "100%",
+        }}
+      >
         <Routes>
           <Route path="/" element={<BarcodeScanner />} />
           {/* 只有登录成功后才能访问 DatabaseImport 页面 */}
